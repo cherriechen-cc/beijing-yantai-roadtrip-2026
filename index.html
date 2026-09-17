@@ -1,0 +1,1098 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#edf0e4">
+  <meta name="description" content="北京欢乐谷出发，经衡水武邑、淄博、青州，抵达烟台牟平的三日纯电亲子自驾路书。">
+  <meta property="og:title" content="一路向海｜三日亲子纯电自驾路书">
+  <meta property="og:description" content="2026.09.26–09.28，北京欢乐谷 → 衡水武邑 → 淄博 → 青州 → 烟台牟平">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/7/75/Yantai2017.jpg">
+  <title>一路向海｜三日亲子纯电自驾路书</title>
+  <link rel="preconnect" href="https://api.open-meteo.com">
+  <link rel="preconnect" href="https://ak-d.tripcdn.com">
+  <style>
+:root {
+  color-scheme: light;
+  --paper: oklch(96% 0.014 92);
+  --paper-deep: oklch(91% 0.028 91);
+  --ink: oklch(27% 0.038 145);
+  --ink-soft: oklch(45% 0.026 145);
+  --pine: oklch(43% 0.095 147);
+  --pine-dark: oklch(31% 0.071 147);
+  --orange: oklch(66% 0.16 49);
+  --orange-soft: oklch(89% 0.073 64);
+  --blue: oklch(57% 0.10 235);
+  --blue-soft: oklch(91% 0.037 232);
+  --line: oklch(78% 0.028 100);
+  --danger: oklch(53% 0.16 30);
+  --shadow: 0 20px 50px oklch(25% 0.03 145 / 0.12);
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 30px;
+  --page: min(1180px, calc(100vw - 40px));
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Avenir Next", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  text-rendering: optimizeLegibility;
+}
+
+img { display: block; max-width: 100%; }
+
+a { color: inherit; }
+
+button, input { font: inherit; }
+
+:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 12px;
+  left: 12px;
+  transform: translateY(-150%);
+  background: var(--ink);
+  color: var(--paper);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+}
+
+.skip-link:focus { transform: translateY(0); }
+
+.hero {
+  width: var(--page);
+  min-height: 760px;
+  margin: 24px auto 0;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(460px, 1.1fr);
+  align-items: center;
+  gap: clamp(36px, 6vw, 88px);
+}
+
+.hero-copy { padding: 64px 0 80px; }
+
+.eyebrow,
+.section-kicker,
+.label {
+  margin: 0 0 14px;
+  color: var(--pine);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 7ch;
+  margin: 0;
+  font-family: "STKaiti", "KaiTi", "PingFang SC", serif;
+  font-size: clamp(5rem, 10vw, 9.5rem);
+  font-weight: 700;
+  letter-spacing: -0.08em;
+  line-height: 0.86;
+}
+
+.hero-subtitle {
+  max-width: 30em;
+  margin: 34px 0 18px;
+  font-size: clamp(1.12rem, 2vw, 1.45rem);
+  line-height: 1.55;
+}
+
+.hero-route {
+  margin: 0;
+  color: var(--ink-soft);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.hero-route span { color: var(--orange); margin: 0 0.25em; }
+
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+
+.button,
+.map-link {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 180ms cubic-bezier(.22,1,.36,1), background-color 180ms ease;
+}
+
+.button:hover,
+.map-link:hover { transform: translateY(-2px); }
+
+.button.primary { background: var(--ink); color: var(--paper); }
+.button.quiet { background: transparent; border-color: var(--line); color: var(--ink); }
+
+.countdown { margin-top: 18px; color: var(--pine); font-size: 0.92rem; font-weight: 700; }
+
+.hero-collage {
+  position: relative;
+  min-height: 660px;
+  margin: 0;
+}
+
+.hero-photo {
+  position: absolute;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+
+.hero-photo-main {
+  inset: 0 12% 18% 0;
+  width: 72%;
+  height: 72%;
+  border-radius: 48% 48% 22% 22% / 38% 38% 18% 18%;
+}
+
+.hero-photo-village {
+  right: 0;
+  top: 12%;
+  width: 38%;
+  height: 43%;
+  border-radius: 50% 50% 18% 18%;
+  transform: rotate(3deg);
+}
+
+.hero-photo-sea {
+  right: 6%;
+  bottom: 7%;
+  width: 55%;
+  height: 32%;
+  border-radius: 18px 54px 18px 54px;
+  transform: rotate(-2deg);
+}
+
+.hero-collage figcaption {
+  position: absolute;
+  left: 0;
+  bottom: 2%;
+  width: 38%;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.day-nav {
+  position: sticky;
+  z-index: 20;
+  top: 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 4px;
+  overflow-x: auto;
+  background: oklch(96% 0.014 92 / 0.96);
+  border-block: 1px solid var(--line);
+  padding: 10px 16px;
+  backdrop-filter: blur(10px);
+}
+
+.day-nav a {
+  flex: 0 0 auto;
+  border-radius: 999px;
+  padding: 8px 13px;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 750;
+}
+
+.day-nav a:hover,
+.day-nav a.active { background: var(--ink); color: var(--paper); }
+.day-nav span { color: var(--orange); }
+
+.section {
+  width: var(--page);
+  margin-inline: auto;
+  padding-block: clamp(84px, 12vw, 150px);
+  scroll-margin-top: 74px;
+}
+
+.section h2 {
+  max-width: 18ch;
+  margin: 0;
+  font-size: clamp(2.5rem, 5vw, 5.2rem);
+  line-height: 1.06;
+  letter-spacing: -0.055em;
+}
+
+.section h3 { margin: 0; font-size: 1.15rem; line-height: 1.35; }
+.section p { max-width: 68ch; }
+.lede { font-size: clamp(1.1rem, 2vw, 1.35rem); color: var(--ink-soft); }
+
+.overview { padding-top: 110px; }
+
+.overview-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(340px, 0.7fr);
+  gap: clamp(36px, 7vw, 100px);
+  align-items: end;
+}
+
+.route-facts { margin: 0; border-block: 1px solid var(--line); }
+.route-facts div { display: flex; justify-content: space-between; gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--line); }
+.route-facts div:last-child { border-bottom: 0; }
+.route-facts dt { color: var(--ink-soft); }
+.route-facts dd { margin: 0; font-weight: 850; }
+
+.must-know {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 34px;
+  margin-top: 70px;
+  padding: 34px;
+  border-radius: var(--radius-md);
+  background: var(--orange-soft);
+}
+
+.must-know-title { margin: 0; font-size: 1.4rem; font-weight: 900; }
+.must-know ol { margin: 0; padding-left: 1.3em; }
+.must-know li + li { margin-top: 12px; }
+
+.weather-board {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 40px;
+  margin-top: 28px;
+  padding: 34px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+
+.weather-board h3 { font-size: 1.7rem; }
+.weather-board p { margin-bottom: 0; color: var(--ink-soft); }
+.weather-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line); }
+.weather-item { min-height: 100px; background: var(--paper); padding: 16px; }
+.weather-item strong { display: block; font-size: 1.05rem; }
+.weather-item span { color: var(--ink-soft); font-size: 0.88rem; }
+.weather-item.loading { grid-column: 1 / -1; display: grid; place-items: center; }
+
+.day { border-top: 1px solid var(--line); }
+
+.day-heading {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr) auto;
+  gap: 28px;
+  align-items: start;
+  margin-bottom: 68px;
+}
+
+.day-heading h2 { max-width: 15ch; font-size: clamp(2.35rem, 4.8vw, 4.8rem); }
+.day-heading p:last-child { color: var(--ink-soft); }
+.day-date { display: flex; flex-direction: column; padding-top: 7px; }
+.day-date span { color: var(--orange); font-weight: 900; letter-spacing: 0.12em; font-size: 0.72rem; }
+.day-date strong { font-size: 2.7rem; line-height: 1.1; letter-spacing: -0.05em; }
+.day-date small { color: var(--ink-soft); }
+.map-link { border-color: var(--ink); padding-inline: 16px; font-size: 0.88rem; }
+
+.timeline {
+  position: relative;
+  max-width: 880px;
+  margin-left: 112px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 95px;
+  top: 8px;
+  bottom: 12px;
+  width: 1px;
+  background: var(--line);
+}
+
+.timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  gap: 42px;
+  padding-bottom: 40px;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 88px;
+  top: 9px;
+  width: 13px;
+  height: 13px;
+  border: 3px solid var(--paper);
+  border-radius: 50%;
+  background: var(--pine);
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+.timeline-item.drive::before { background: var(--blue); }
+.timeline-item.charge::before { background: var(--orange); }
+.timeline-item.meal::before { background: oklch(64% 0.13 80); }
+.timeline-item.play::before { background: oklch(61% 0.13 160); }
+.timeline-item.stay::before { background: oklch(52% 0.1 285); }
+.timeline-item.critical::before { background: var(--danger); }
+.timeline-item.arrival::before { box-shadow: 0 0 0 7px var(--orange-soft); }
+
+.timeline-item time { font-weight: 900; font-variant-numeric: tabular-nums; }
+.timeline-item p { margin: 8px 0 10px; color: var(--ink-soft); }
+.cost, .duration { display: inline-block; color: var(--pine-dark); font-weight: 850; }
+.timeline-item .text-link { display: inline-block; margin-top: 8px; }
+
+.text-link { color: var(--blue); font-weight: 800; text-underline-offset: 3px; }
+
+.micro-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.tag { border: 1px solid var(--line); border-radius: 999px; padding: 3px 9px; color: var(--ink-soft); font-size: 0.78rem; font-weight: 750; }
+.tag.green { border-color: var(--pine); color: var(--pine); }
+.tag.booked { border-color: var(--orange); color: var(--danger); }
+
+.cost-breakdown { display: flex; flex-wrap: wrap; gap: 7px; margin: 12px 0; }
+.cost-breakdown span { background: var(--paper-deep); border-radius: 999px; padding: 3px 9px; font-size: 0.8rem; }
+.estimated-total { display: block; color: var(--pine); }
+
+.day-summary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 26px;
+  margin-top: 28px;
+  padding: 16px 24px;
+  border-block: 1px solid var(--line);
+  font-weight: 800;
+}
+
+.split-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: center;
+  gap: clamp(30px, 6vw, 80px);
+  margin: 0 0 80px;
+}
+
+.split-feature.reverse { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); }
+
+.feature-photo { margin: 0; }
+.feature-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-sm) var(--radius-lg) var(--radius-sm) var(--radius-lg); box-shadow: var(--shadow); }
+.feature-photo figcaption { margin-top: 10px; color: var(--ink-soft); font-size: 0.78rem; }
+.field-notes h3 { max-width: 16ch; font-size: clamp(1.8rem, 3vw, 3rem); letter-spacing: -0.04em; }
+.field-notes ol { padding-left: 1.25em; }
+.field-notes li + li { margin-top: 12px; }
+.fact-strip { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.fact-strip span { background: var(--blue-soft); border-radius: 999px; padding: 6px 11px; color: var(--pine-dark); font-size: 0.8rem; font-weight: 800; }
+
+.season-note {
+  display: flex;
+  gap: 18px;
+  max-width: 880px;
+  margin: -34px 0 70px 112px;
+  padding: 17px 20px;
+  border: 1px solid var(--orange);
+  border-radius: var(--radius-sm);
+  color: var(--danger);
+}
+
+.backup-plan {
+  display: grid;
+  grid-template-columns: 0.55fr 1.45fr;
+  gap: 30px;
+  margin: 70px 0 0 112px;
+  padding: 30px;
+  border-radius: var(--radius-md);
+  background: var(--blue-soft);
+}
+
+.backup-plan p { margin: 0; }
+
+.energy { background: var(--pine-dark); color: var(--paper); width: 100%; padding-inline: max(20px, calc((100vw - min(1180px, calc(100vw - 40px))) / 2)); }
+.energy .section-kicker { color: var(--orange-soft); }
+.energy .lede { color: oklch(84% 0.025 145); }
+
+.energy-table { margin-top: 50px; border-top: 1px solid oklch(72% 0.035 145 / 0.5); }
+.energy-row { display: grid; grid-template-columns: 1fr 1.2fr 1.35fr 1.2fr 0.7fr; gap: 16px; padding: 18px 0; border-bottom: 1px solid oklch(72% 0.035 145 / 0.35); }
+.energy-row span:last-child { text-align: right; font-weight: 850; color: var(--orange-soft); }
+.energy-head { color: oklch(80% 0.025 145); font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.07em; }
+.energy-head span:last-child { color: inherit; }
+.energy-rules { display: grid; grid-template-columns: 0.45fr 1.55fr; gap: 36px; margin-top: 50px; }
+.energy-rules ul { margin: 0; }
+.energy-rules li + li { margin-top: 10px; }
+
+.budget-heading { display: flex; justify-content: space-between; gap: 40px; align-items: flex-end; }
+.budget-seal { flex: 0 0 auto; width: 180px; aspect-ratio: 1; display: grid; place-content: center; text-align: center; border: 2px solid var(--orange); border-radius: 50%; transform: rotate(4deg); }
+.budget-seal span { font-size: 0.78rem; }
+.budget-seal strong { display: block; color: var(--danger); font-size: 1.45rem; }
+.budget-ledger { margin-top: 58px; border-top: 1px solid var(--line); }
+.ledger-row { display: grid; grid-template-columns: 0.55fr 1.7fr 0.6fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.ledger-row > span:first-child { font-weight: 850; }
+.ledger-row > span:nth-child(2) { color: var(--ink-soft); }
+.ledger-row strong { text-align: right; }
+.ledger-total { font-size: 1.18rem; background: var(--orange-soft); padding-inline: 16px; }
+.budget-note { margin-top: 20px; color: var(--ink-soft); }
+
+.checklist-section { border-top: 1px solid var(--line); }
+.checklist-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 50px; }
+.check-group { min-width: 0; margin: 0; border: 1px solid var(--line); border-radius: var(--radius-md); padding: 26px; }
+.check-group.urgent { background: var(--orange-soft); border-color: transparent; }
+.check-group legend { padding: 0 6px; font-weight: 900; font-size: 1.15rem; }
+.check-group label { display: grid; grid-template-columns: 22px 1fr; gap: 10px; align-items: start; cursor: pointer; }
+.check-group label + label { margin-top: 13px; }
+.check-group input { width: 18px; height: 18px; margin-top: 4px; accent-color: var(--pine); }
+.check-group label:has(input:checked) { color: var(--ink-soft); text-decoration: line-through; }
+.reset-checklist { margin-top: 20px; border: 0; background: transparent; color: var(--blue); font-weight: 800; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+
+.sources { border-top: 1px solid var(--line); }
+.source-columns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; margin-top: 50px; }
+.source-columns ul { padding-left: 1.1em; }
+.source-columns li + li { margin-top: 8px; }
+.source-columns a { color: var(--blue); text-underline-offset: 3px; }
+.disclaimer { margin-top: 55px; padding-top: 22px; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: 0.9rem; }
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: var(--page);
+  margin: 0 auto;
+  padding: 34px 0 52px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+}
+
+footer p { margin: 0; }
+
+@media (max-width: 900px) {
+  :root { --page: min(100% - 30px, 720px); }
+  .hero { min-height: auto; grid-template-columns: 1fr; gap: 0; }
+  .hero-copy { padding: 74px 0 28px; }
+  .hero h1 { font-size: clamp(5rem, 22vw, 8rem); }
+  .hero-collage { min-height: 540px; }
+  .overview-layout, .weather-board { grid-template-columns: 1fr; }
+  .must-know { grid-template-columns: 1fr; gap: 10px; }
+  .day-heading { grid-template-columns: 100px 1fr; }
+  .day-heading .map-link { grid-column: 2; justify-self: start; }
+  .timeline { margin-left: 0; }
+  .split-feature, .split-feature.reverse { grid-template-columns: 1fr; }
+  .split-feature.reverse .field-notes { order: 2; }
+  .season-note, .backup-plan { margin-left: 0; }
+  .energy-row { grid-template-columns: 1.1fr 1.2fr 1.2fr 0.7fr; }
+  .energy-row span:nth-child(4), .energy-head span:nth-child(4) { display: none; }
+  .energy-rules { grid-template-columns: 1fr; }
+  .checklist-grid, .source-columns { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 620px) {
+  body { font-size: 15px; }
+  .hero { margin-top: 0; }
+  .hero-copy { padding-top: 54px; }
+  .hero-subtitle { margin-top: 26px; }
+  .hero-collage { min-height: 400px; }
+  .hero-photo-main { width: 78%; height: 68%; }
+  .hero-photo-village { width: 41%; height: 38%; }
+  .hero-photo-sea { width: 58%; height: 30%; }
+  .hero-collage figcaption { width: 40%; font-size: 0.7rem; }
+  .day-nav { justify-content: flex-start; }
+  .day-nav a { padding: 7px 10px; }
+  .section { padding-block: 84px; }
+  .section h2 { font-size: clamp(2.35rem, 12vw, 3.5rem); }
+  .day-heading { grid-template-columns: 1fr; gap: 15px; margin-bottom: 50px; }
+  .day-heading .map-link { grid-column: auto; }
+  .day-date { flex-direction: row; align-items: baseline; gap: 8px; }
+  .day-date strong { font-size: 2rem; }
+  .timeline::before { left: 68px; }
+  .timeline-item { grid-template-columns: 54px 1fr; gap: 28px; padding-bottom: 34px; }
+  .timeline-item::before { left: 61px; }
+  .timeline-item time { font-size: 0.88rem; }
+  .split-feature { margin-bottom: 60px; }
+  .season-note { display: block; }
+  .season-note strong { display: block; margin-bottom: 4px; }
+  .backup-plan { grid-template-columns: 1fr; }
+  .energy-row { grid-template-columns: 1fr 1.2fr 0.8fr; }
+  .energy-row span:nth-child(3), .energy-head span:nth-child(3) { display: none; }
+  .budget-heading { align-items: flex-start; flex-direction: column; }
+  .budget-seal { width: 138px; }
+  .ledger-row { grid-template-columns: 0.7fr 1.3fr; }
+  .ledger-row strong { grid-column: 2; text-align: left; }
+  .weather-list { grid-template-columns: 1fr; }
+  .must-know, .weather-board { padding: 24px; }
+  footer { flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
+
+@media print {
+  :root { --page: 100%; }
+  body { background: oklch(98% 0.006 92); font-size: 10pt; }
+  .hero { min-height: auto; grid-template-columns: 1fr; margin: 0; }
+  .hero-copy { padding: 20mm 0 8mm; }
+  .hero h1 { font-size: 56pt; }
+  .hero-collage, .day-nav, .hero-actions, .countdown, .reset-checklist { display: none !important; }
+  .section { padding: 12mm 0; break-inside: auto; }
+  .section h2 { font-size: 28pt; }
+  .day-heading { break-after: avoid; }
+  .timeline-item, .split-feature, .must-know, .weather-board, .backup-plan, .check-group { break-inside: avoid; }
+  .energy { color: var(--ink); background: oklch(92% 0.02 145); padding-inline: 0; }
+  a { text-decoration: none; }
+}
+
+</style>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到行程正文</a>
+
+  <header class="hero" id="top">
+    <div class="hero-copy">
+      <p class="eyebrow">2026.09.26 SAT → 09.28 MON</p>
+      <h1>一路向海</h1>
+      <p class="hero-subtitle">北京欢乐谷出发，带着 3.8 岁的小朋友，沿着午睡时间一路开到烟台牟平。</p>
+      <p class="hero-route">北京 <span>→</span> 武邑 <span>→</span> 淄博 <span>→</span> 青州 <span>→</span> 烟台</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#day-1">开始看路书</a>
+        <button class="button quiet" id="print-button" type="button">打印 / 存 PDF</button>
+      </div>
+      <p class="countdown" id="countdown" aria-live="polite">正在计算出发倒计时…</p>
+    </div>
+
+    <figure class="hero-collage" aria-label="行程沿途风景拼图">
+      <img class="hero-photo hero-photo-main" src="https://ak-d.tripcdn.com/images/1mh4v12000lwln2rhB52D.jpg" alt="衡水野生动物园的长颈鹿互动区">
+      <img class="hero-photo hero-photo-village" src="https://alipic.files.mozhan.com/ueditor/image/20200927/1601174023366229.jpg" alt="青州杏花村秋色与玲珑石景观">
+      <img class="hero-photo hero-photo-sea" src="https://ak-d.tripcdn.com/images/1mh7312000h7yxi9r4F1F_Q90.jpg" alt="烟台蓝色海岸线">
+      <figcaption>长颈鹿、山野与海岸：三天的路，给孩子三种完全不同的记忆。</figcaption>
+    </figure>
+  </header>
+
+  <nav class="day-nav" aria-label="页面导航">
+    <a href="#overview">总览</a>
+    <a href="#day-1"><span>9.26</span> 武邑</a>
+    <a href="#day-2"><span>9.27</span> 淄博·青州</a>
+    <a href="#day-3"><span>9.28</span> 烟台</a>
+    <a href="#charging">充电</a>
+    <a href="#budget">预算</a>
+    <a href="#checklist">清单</a>
+  </nav>
+
+  <main id="main">
+    <section class="overview section" id="overview">
+      <div class="section-kicker">先看这一页</div>
+      <div class="overview-layout">
+        <div>
+          <h2>这趟路，按孩子的节奏走</h2>
+          <p class="lede">三天约 1,030km。长距离驾驶都从午饭后开始，把孩子最稳定的一段午睡留给高速；正式景点只安排在上午，晚上不硬塞项目。</p>
+        </div>
+        <dl class="route-facts" aria-label="行程关键数据">
+          <div><dt>路线估算</dt><dd>约 1,030km</dd></div>
+          <div><dt>补能计划</dt><dd>4 次，均留余量</dd></div>
+          <div><dt>住宿已付</dt><dd>¥389.48</dd></div>
+          <div><dt>目标总预算</dt><dd>约 ¥2,050</dd></div>
+        </dl>
+      </div>
+
+      <div class="must-know" role="note" aria-label="最重要的三件事">
+        <p class="must-know-title">出发前只记住 3 件事</p>
+        <ol>
+          <li><strong>9 月 25 日打两个电话：</strong>确认杏花村周一开园与餐饮，确认青州酒店充电位能否留车位。</li>
+          <li><strong>长途出发不低于 80%：</strong>G9 按实际 450km 续航规划，不拿表显最后 15% 冒险。</li>
+          <li><strong>第三天 13:00 必须离开：</strong>杏花村到紫金山庄约 384km，想在 19:00 前到就不再加正式景点。</li>
+        </ol>
+      </div>
+
+      <div class="weather-board" aria-labelledby="weather-title">
+        <div>
+          <p class="label">实时更新</p>
+          <h3 id="weather-title">沿途天气</h3>
+          <p>页面打开时会拉取 16 日预报。天气仍可能变化，出发前 48 小时再确认降雨、风力与温差。</p>
+        </div>
+        <div class="weather-list" id="weather-list" aria-live="polite">
+          <div class="weather-item loading">正在获取天气…</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="day section" id="day-1">
+      <header class="day-heading">
+        <div class="day-date"><span>DAY 01</span><strong>9.26</strong><small>星期六</small></div>
+        <div>
+          <p class="section-kicker">北京 → 衡水武邑</p>
+          <h2>先把路开顺，再慢慢吃一顿</h2>
+          <p>约 284km，驾驶约 3小时13分，计划含补能用时 3小时45分至4小时。</p>
+        </div>
+        <a class="map-link" target="_blank" rel="noopener" href="https://ditu.amap.com/ssr/dir?from=home&amp;type=0&amp;fname=%E5%8C%97%E4%BA%AC%E6%AC%A2%E4%B9%90%E8%B0%B7&amp;flat=39.867355&amp;flon=116.494743&amp;fid=B000A7N4BI&amp;fpoitype=080501%7C110202&amp;dname=%E4%B9%90%E9%81%93%E9%85%92%E5%BA%97%28%E6%AD%A6%E9%82%91%E4%B8%AD%E5%AD%A6%E5%BA%97%29&amp;dlat=37.793964&amp;dlon=115.866667&amp;did=B0J36LPZI4&amp;dpoitype=100100&amp;policy=1">打开完整导航 ↗</a>
+      </header>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <time>13:30</time>
+          <div><h3>欢乐谷停车场集合</h3><p>上厕所、装水、儿童安全座椅复核。车辆建议 95% 至 100% 电量出发。</p><span class="cost">¥0</span></div>
+        </article>
+        <article class="timeline-item drive">
+          <time>14:00</time>
+          <div><h3>出发：京开高速 → G45 大广高速</h3><p>孩子上车后进入午睡。驾驶员不要为了“睡够一觉”减少必要休息；如出京拥堵，晚饭整体顺延即可。</p><span class="duration">约 2小时20分</span></div>
+        </article>
+        <article class="timeline-item charge">
+          <time>16:20</time>
+          <div>
+            <h3>深州服务区：第一次补能</h3>
+            <p>优先选广州方向国网快充，补到约 90%。一家三口同时上厕所、喝水、走动，控制在 25 至 30 分钟。</p>
+            <div class="micro-row"><span class="tag green">目标 90%</span><span class="tag">约 45–55kWh</span><span class="cost">¥65–85</span></div>
+            <a class="text-link" target="_blank" rel="noopener" href="https://uri.amap.com/search?keyword=%E6%B7%B1%E5%B7%9E%E6%9C%8D%E5%8A%A1%E5%8C%BA%E5%85%85%E7%94%B5%E7%AB%99&amp;city=%E8%A1%A1%E6%B0%B4&amp;callnative=1">高德搜索充电站 ↗</a>
+          </div>
+        </article>
+        <article class="timeline-item drive">
+          <time>16:50</time>
+          <div><h3>继续前往武邑</h3><p>剩余约 70 至 80km，孩子刚醒时可在服务区完成加餐，避免下高速后再找便利店。</p><span class="duration">约 50 分钟</span></div>
+        </article>
+        <article class="timeline-item stay">
+          <time>17:40</time>
+          <div>
+            <h3>乐道酒店办理入住</h3>
+            <p>地址：武邑县宁武路 99 号檀香小镇 9 号楼。免费停车，24 小时前台，早餐 07:00–09:00。预留 20 分钟整理行李。</p>
+            <div class="micro-row"><span class="tag booked">已预订</span><span class="cost">¥227.48 含早</span></div>
+            <a class="text-link" target="_blank" rel="noopener" href="https://www.amap.com/place/B0J36LPZI4">查看酒店位置 ↗</a>
+          </div>
+        </article>
+        <article class="timeline-item meal">
+          <time>18:20</time>
+          <div><h3>晚饭：花园酒家（花园路店）</h3><p>携程参考人均约 51 元，点两荤一素加主食足够两大一小。告诉店员孩子吃，少盐少辣；不必为了凑特色菜超预算。</p><span class="cost">预算 ¥160</span></div>
+        </article>
+        <article class="timeline-item play">
+          <time>19:30</time>
+          <div><h3>新时代广场散步放电</h3><p>离酒店约 1.7km。只走 30 至 40 分钟，买次日可带走的水和独立包装零食，20:30 前回酒店洗澡。</p><span class="cost">¥0–20</span></div>
+        </article>
+      </div>
+
+      <div class="day-summary"><span>预计结束 20:30</span><span>当日预算约 ¥560–590</span><span>睡前车量约 70%+</span></div>
+    </section>
+
+    <section class="day section animal-day" id="day-2">
+      <header class="day-heading">
+        <div class="day-date"><span>DAY 02</span><strong>9.27</strong><small>星期日</small></div>
+        <div>
+          <p class="section-kicker">衡水野生动物园 → 淄博 → 青州</p>
+          <h2>上午看动物，下午睡着赶路</h2>
+          <p>动物园至淄博约 276km，驾驶约 2小时53分；淄博至青州酒店约 54km，驾驶约 1小时18分。</p>
+        </div>
+        <a class="map-link" target="_blank" rel="noopener" href="https://ditu.amap.com/ssr/dir?from=home&amp;type=0&amp;fname=%E8%A1%A1%E6%B0%B4%E9%87%8E%E7%94%9F%E5%8A%A8%E7%89%A9%E5%9B%AD&amp;flat=37.762373&amp;flon=115.899679&amp;fid=B0FFJJFAYP&amp;fpoitype=110102&amp;dname=%E5%B0%8F%E5%AF%92%E7%BE%8A%E7%83%A7%E7%83%A4%28%E5%87%AF%E7%91%9E%E6%97%B6%E4%BB%A3%E5%A4%A7%E5%8E%A6%E5%BA%97%29&amp;dlat=36.814577&amp;dlon=118.015915&amp;did=B02150R6HB&amp;dpoitype=050118&amp;policy=1">动物园至淄博导航 ↗</a>
+      </header>
+
+      <div class="split-feature">
+        <figure class="feature-photo">
+          <img src="https://ak-d.tripcdn.com/images/1mh4v12000lwln2rhB52D.jpg" alt="游客在衡水野生动物园长颈鹿观景台互动">
+          <figcaption>衡水野生动物园长颈鹿互动区。图片来源：Trip.com 景点资料。</figcaption>
+        </figure>
+        <div class="field-notes">
+          <p class="label">亲子精华玩法</p>
+          <h3>3 小时 20 分钟，不贪全</h3>
+          <ol>
+            <li><strong>先自驾区：</strong>车里看食草动物与猛兽，孩子刚到最兴奋，把核心体验放最前。</li>
+            <li><strong>再步行区：</strong>租家庭自行车，优先长颈鹿、大象、鸟类与近入口区域。</li>
+            <li><strong>只买园方允许的投喂食物：</strong>不开大窗，不让孩子把手伸近动物嘴边，自驾区不下车。</li>
+          </ol>
+          <div class="fact-strip"><span>夏令时 08:40–17:30</span><span>孩子免门票</span><span>票务 0318-5760888</span></div>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item meal">
+          <time>07:00</time>
+          <div><h3>酒店早餐</h3><p>吃到 07:35，孩子补充主食和蛋白质。08:10 前退房，贵重物品全部带走。</p><span class="cost">已含</span></div>
+        </article>
+        <article class="timeline-item drive">
+          <time>08:20</time>
+          <div><h3>前往动物园</h3><p>酒店距动物园约 4.5km。08:30 左右到停车场，周日为排队留 10 分钟。</p><span class="duration">约 10 分钟</span></div>
+        </article>
+        <article class="timeline-item play">
+          <time>08:40</time>
+          <div>
+            <h3>衡水野生动物园</h3>
+            <p>08:40–09:45 自驾区；09:45 停车、厕所；10:00–11:50 步行区精华；11:50 开始返程，12:10 前出园。</p>
+            <div class="cost-breakdown"><span>成人票 2 × ¥30</span><span>自驾车 ¥30</span><span>停车 ¥10</span><span>家庭车约 ¥50</span><span>投喂约 ¥30</span></div>
+            <strong class="estimated-total">景区合计约 ¥180</strong>
+            <a class="text-link" target="_blank" rel="noopener" href="https://www.amap.com/place/B0FFJJFAYP">查看景区位置 ↗</a>
+          </div>
+        </article>
+        <article class="timeline-item meal">
+          <time>12:15</time>
+          <div><h3>午饭：福客来酒家</h3><p>位于 X905 与永强街交叉口附近，离园后就吃，不把孩子午睡切成两段。备选为附近“武邑城南扣碗”。13:00 结账上车。</p><span class="cost">预算 ¥120</span></div>
+        </article>
+        <article class="timeline-item drive">
+          <time>13:05</time>
+          <div><h3>前往淄博，午睡主路段</h3><p>走 S072 衡德高速、G3 京台高速、G20 青银高速。成人轮流关注导航和孩子状态。</p><span class="duration">约 2小时15分至邹平</span></div>
+        </article>
+        <article class="timeline-item charge">
+          <time>15:20</time>
+          <div>
+            <h3>邹平服务区：第二次补能</h3>
+            <p>青岛方向有国网快充，公开资料显示 4 个快充。预计从 20% 左右补到 75% 至 80%，孩子醒来后上厕所、加餐。</p>
+            <div class="micro-row"><span class="tag green">目标 75–80%</span><span class="tag">25–30 分钟</span><span class="cost">¥65–85</span></div>
+            <a class="text-link" target="_blank" rel="noopener" href="https://uri.amap.com/search?keyword=%E9%82%B9%E5%B9%B3%E6%9C%8D%E5%8A%A1%E5%8C%BA%E5%85%85%E7%94%B5%E7%AB%99%E9%9D%92%E5%B2%9B%E6%96%B9%E5%90%91&amp;city=%E6%BB%A8%E5%B7%9E&amp;callnative=1">查看充电站 ↗</a>
+          </div>
+        </article>
+        <article class="timeline-item meal">
+          <time>16:40</time>
+          <div>
+            <h3>晚饭：小寒羊烧烤（凯瑞时代大厦店）</h3>
+            <p>室内无烟烧烤，16:30 开晚市，携程参考人均约 77 元。两大一小按 ¥190 封顶；孩子先吃馒头片、玉米、鸡翅等熟透食物，烤炉由成人照看。</p>
+            <span class="cost">预算 ¥190</span>
+            <a class="text-link" target="_blank" rel="noopener" href="https://www.amap.com/place/B02150R6HB">餐厅位置 ↗</a>
+          </div>
+        </article>
+        <article class="timeline-item drive">
+          <time>18:00</time>
+          <div><h3>淄博 → 青州酒店</h3><p>约 54km，多为城市快速路和省道。吃完直接走，不加八大局和海岱楼，给孩子留出正常入睡时间。</p><span class="duration">约 1小时18分</span><a class="text-link" target="_blank" rel="noopener" href="https://ditu.amap.com/ssr/dir?from=home&amp;type=0&amp;fname=%E5%B0%8F%E5%AF%92%E7%BE%8A%E7%83%A7%E7%83%A4%28%E5%87%AF%E7%91%9E%E6%97%B6%E4%BB%A3%E5%A4%A7%E5%8E%A6%E5%BA%97%29&amp;flat=36.814577&amp;flon=118.015915&amp;fid=B02150R6HB&amp;fpoitype=050118&amp;dname=%E5%92%8C%E6%82%A6%E6%AC%A2%E5%AE%BF%E6%99%BA%E6%85%A7%E9%85%92%E5%BA%97%28%E9%9D%92%E5%B7%9E%E5%8D%9A%E7%89%A9%E9%A6%86%E9%9D%92%E5%B7%9E%E5%8F%A4%E5%9F%8E%E6%99%AF%E5%8C%BA%E5%BA%97%29&amp;dlat=36.682767&amp;dlon=118.462164&amp;did=B0J24C2SIZ&amp;dpoitype=100100&amp;policy=1">打开导航 ↗</a></div>
+        </article>
+        <article class="timeline-item stay">
+          <time>19:20</time>
+          <div>
+            <h3>和悦欢宿智慧酒店入住并充电</h3>
+            <p>地址：青州市衡王府西街 1 号院内北楼。酒店资料标注有充电车位和免费停车；入住后立即插枪，目标 90% 至 95%。</p>
+            <div class="micro-row"><span class="tag booked">已预订</span><span class="cost">¥162 含早</span><span class="tag">电费约 ¥40–60</span></div>
+            <a class="text-link" target="_blank" rel="noopener" href="https://www.amap.com/place/B0J24C2SIZ">查看酒店位置 ↗</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="day-summary"><span>预计入住 19:20</span><span>当日预算约 ¥850–920</span><span>过路费约 ¥114</span></div>
+    </section>
+
+    <section class="day section village-day" id="day-3">
+      <header class="day-heading">
+        <div class="day-date"><span>DAY 03</span><strong>9.28</strong><small>星期一</small></div>
+        <div>
+          <p class="section-kicker">青州杏花村 → 烟台牟平</p>
+          <h2>山野玩半天，准时向海出发</h2>
+          <p>酒店至景区约 13.4km；景区至紫金山庄约 384km，驾驶约 4小时03分，高速费约 162 元。</p>
+        </div>
+        <a class="map-link" target="_blank" rel="noopener" href="https://ditu.amap.com/ssr/dir?from=home&amp;type=0&amp;fname=%E9%9D%92%E5%B7%9E%E6%9D%8F%E8%8A%B1%E6%9D%91%E6%97%85%E6%B8%B8%E5%BA%A6%E5%81%87%E5%8C%BA&amp;flat=36.644975&amp;flon=118.346025&amp;fid=B0G1P6G067&amp;fpoitype=080401&amp;dname=%E4%B8%B0%E9%87%91%C2%B7%E7%B4%AB%E9%87%91%E5%B1%B1%E5%BA%84&amp;dlat=37.432248&amp;dlon=121.583088&amp;did=B0LBP504YJ&amp;dpoitype=120302&amp;policy=1">杏花村至牟平导航 ↗</a>
+      </header>
+
+      <div class="split-feature reverse">
+        <div class="field-notes">
+          <p class="label">最关键的判断</p>
+          <h3>基础票先入园，项目现场买</h3>
+          <p>2026 年公开票价为成人基础门票 40 元，1.1m 以下儿童免门票。7 项套票成人 98 元，但漂流、越野车和高空项目可能有身高或年龄限制。孩子不足 110cm，不建议提前买三人套票。</p>
+          <div class="fact-strip"><span>基础票 2 × ¥40</span><span>免费停车</span><span>热线 15253681179</span></div>
+        </div>
+        <figure class="feature-photo">
+          <img src="https://alipic.files.mozhan.com/ueditor/image/20200927/1601174066458300.jpg" alt="青州杏花村山林、湿地与游乐区实景">
+          <figcaption>青州杏花村山林、湿地与游乐区。图片来源：景区官网。</figcaption>
+        </figure>
+      </div>
+
+      <div class="season-note">
+        <strong>9 月不是杏花花期。</strong>
+        <span>这一天的重点是石林、田园、萌宠与无动力游乐，不要按春季“杏花满山”的宣传图期待现场。</span>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item meal">
+          <time>07:00</time>
+          <div><h3>酒店早餐</h3><p>07:35 吃完，确认车辆至少 90%。若酒店充电未完成，先在青州市区补到 90%，景区游玩时间相应缩短。</p><span class="cost">已含</span></div>
+        </article>
+        <article class="timeline-item drive">
+          <time>08:10</time>
+          <div><h3>退房，前往杏花村</h3><p>走桃源府路、凤凰山路、济青线。导航至“青州杏花村旅游度假区”主入口。</p><span class="duration">13.4km / 约 20 分钟</span><a class="text-link" target="_blank" rel="noopener" href="https://ditu.amap.com/ssr/dir?from=home&amp;type=0&amp;fname=%E5%92%8C%E6%82%A6%E6%AC%A2%E5%AE%BF%E6%99%BA%E6%85%A7%E9%85%92%E5%BA%97%28%E9%9D%92%E5%B7%9E%E5%8D%9A%E7%89%A9%E9%A6%86%E9%9D%92%E5%B7%9E%E5%8F%A4%E5%9F%8E%E6%99%AF%E5%8C%BA%E5%BA%97%29&amp;flat=36.682767&amp;flon=118.462164&amp;fid=B0J24C2SIZ&amp;fpoitype=100100&amp;dname=%E9%9D%92%E5%B7%9E%E6%9D%8F%E8%8A%B1%E6%9D%91%E6%97%85%E6%B8%B8%E5%BA%A6%E5%81%87%E5%8C%BA&amp;dlat=36.644975&amp;dlon=118.346025&amp;did=B0G1P6G067&amp;dpoitype=080401&amp;policy=1">打开导航 ↗</a></div>
+        </article>
+        <article class="timeline-item play">
+          <time>08:30</time>
+          <div>
+            <h3>杏花村亲子精华路线</h3>
+            <p>08:30–09:00 入园与厕所；09:00–10:00 萌宠与无动力区；10:00–11:00 石海、杏林与湿地慢走；11:00–12:00 只选身高符合的低风险项目；12:00 开始收尾。</p>
+            <span class="cost">门票 ¥80，项目机动 ¥0–100</span>
+            <a class="text-link" target="_blank" rel="noopener" href="https://www.amap.com/place/B0G1P6G067">景区位置 ↗</a>
+          </div>
+        </article>
+        <article class="timeline-item meal">
+          <time>12:05</time>
+          <div><h3>午饭：景区内优先，车上备份</h3><p>入园时先问当天美食街或农家乐是否营业，10:30 前预订。若周一餐饮不开，吃提前准备的面包、饭团、牛奶、水果，不再折返青州市区。</p><span class="cost">预算 ¥120–150</span></div>
+        </article>
+        <article class="timeline-item drive critical">
+          <time>13:00</time>
+          <div><h3>最晚出发：前往烟台牟平</h3><p>走 S6 济潍高速、G20 青银高速、G15 沈海高速。孩子午睡 2 至 3 小时，成人保持正常休息节奏。</p><span class="duration">全程约 4小时03分纯驾驶</span></div>
+        </article>
+        <article class="timeline-item charge">
+          <time>14:25</time>
+          <div>
+            <h3>潍坊服务区：第四次补能</h3>
+            <p>选青岛方向。公开资料显示双侧共 8 桩，单侧 4 个国网快充。补到约 85%，同时给孩子活动 10 分钟；若排队，继续到高密服务区。</p>
+            <div class="micro-row"><span class="tag green">目标 85%</span><span class="tag">25–30 分钟</span><span class="cost">¥45–65</span></div>
+            <a class="text-link" target="_blank" rel="noopener" href="https://www.amap.com/place/B02180I2R6">查看潍坊服务区 ↗</a>
+          </div>
+        </article>
+        <article class="timeline-item stay arrival">
+          <time>17:45</time>
+          <div><h3>抵达丰金·紫金山庄</h3><p>导航终点按“牟平区滨海东路 766 号”设置。小区范围较大，提前向家人确认具体园区、楼号和从哪个门进。</p><span class="duration">保守抵达窗口 17:45–18:30</span><a class="text-link" target="_blank" rel="noopener" href="https://www.amap.com/place/B0LBP504YJ">查看紫金山庄位置 ↗</a></div>
+        </article>
+      </div>
+
+      <div class="backup-plan">
+        <div><p class="label">如果杏花村临时休园或遇大雨</p><h3>不改长途出发时间</h3></div>
+        <p>08:30–10:00 范公亭公园，10:10–11:40 青州古城南门至偶园街，均以户外短线为主；11:45 在青州吃午饭，12:45 前上高速。青州博物馆逢周一通常闭馆，不作为 9 月 28 日备选。</p>
+      </div>
+
+      <div class="day-summary"><span>目标抵达 17:45–18:30</span><span>当日预算约 ¥470–590</span><span>过路费约 ¥162</span></div>
+    </section>
+
+    <section class="section energy" id="charging">
+      <div class="section-kicker">G9 补能策略</div>
+      <h2>不用把 450km 开到极限</h2>
+      <p class="lede">全程按 20–22kWh/100km 的高速能耗预留，空调、逆风、拥堵与载重都算在余量里。充电功率和费用以现场为准。</p>
+
+      <div class="energy-table" role="table" aria-label="充电计划">
+        <div class="energy-row energy-head" role="row"><span>时间</span><span>地点</span><span>到站 → 离站</span><span>目的</span><span>估算</span></div>
+        <div class="energy-row" role="row"><span>9.26 16:20</span><strong>深州服务区</strong><span>约 35–45% → 90%</span><span>给第二天留底</span><span>¥65–85</span></div>
+        <div class="energy-row" role="row"><span>9.27 15:20</span><strong>邹平服务区</strong><span>约 20% → 75–80%</span><span>覆盖淄博与青州</span><span>¥65–85</span></div>
+        <div class="energy-row" role="row"><span>9.27 19:30</span><strong>青州酒店</strong><span>约 45–55% → 90–95%</span><span>第三天满余量出发</span><span>¥40–60</span></div>
+        <div class="energy-row" role="row"><span>9.28 14:25</span><strong>潍坊服务区</strong><span>约 45–55% → 85%</span><span>直达牟平</span><span>¥45–65</span></div>
+      </div>
+
+      <div class="energy-rules">
+        <h3>现场判断规则</h3>
+        <ul>
+          <li>进入服务区前 20km，在小鹏车机或“e充电”看空闲枪数；排队超过 2 台车就启用备选站。</li>
+          <li>服务区备选顺序：深州不可用时选饶阳或武邑城区；邹平不可用时直接进淄博城区；潍坊不可用时选高密服务区。</li>
+          <li>不要为了补到 100% 多等 30 分钟。高速快充到 80% 左右后功率通常下降，留 20% 到站余量更高效。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section budget" id="budget">
+      <div class="section-kicker">两大一小预算</div>
+      <div class="budget-heading">
+        <div><h2>目标 ¥2,050，封顶按 ¥2,300 准备</h2><p>不含北京出发前满电、伴手礼和抵达烟台后的晚饭。</p></div>
+        <div class="budget-seal"><span>已确定住宿</span><strong>¥389.48</strong></div>
+      </div>
+
+      <div class="budget-ledger">
+        <div class="ledger-row"><span>住宿</span><span>乐道 ¥227.48 + 和悦欢宿 ¥162</span><strong>¥389.48</strong></div>
+        <div class="ledger-row"><span>正餐</span><span>4 餐，每餐均不超过 ¥200</span><strong>约 ¥610</strong></div>
+        <div class="ledger-row"><span>景点与游玩</span><span>动物园约 ¥180，杏花村约 ¥80–180</span><strong>¥260–360</strong></div>
+        <div class="ledger-row"><span>高速通行</span><span>北京→武邑 ¥105，动物园→淄博 ¥114，青州→牟平 ¥162</span><strong>约 ¥381</strong></div>
+        <div class="ledger-row"><span>充电</span><span>约 150–190kWh 公共补能，按不同时段电价浮动</span><strong>¥220–320</strong></div>
+        <div class="ledger-row"><span>停车与零食</span><span>动物园停车、饮水、孩子加餐</span><strong>约 ¥90</strong></div>
+        <div class="ledger-row ledger-total"><span>合计</span><span>基础玩法至含少量机动项目</span><strong>¥2,050 左右</strong></div>
+      </div>
+
+      <p class="budget-note">预算口径会随现场票价、充电电价与点菜数量变化。预留 ¥250 机动金后，总准备额 ¥2,300 比较舒服。</p>
+    </section>
+
+    <section class="section checklist-section" id="checklist">
+      <div class="section-kicker">带娃出发清单</div>
+      <h2>勾选会自动保存在这台设备</h2>
+      <div class="checklist-grid">
+        <fieldset class="check-group">
+          <legend>车辆与证件</legend>
+          <label><input type="checkbox" data-check="license"> 驾驶证、行驶证、身份证</label>
+          <label><input type="checkbox" data-check="etc"> ETC 与车机账号可用</label>
+          <label><input type="checkbox" data-check="charging-apps"> 小鹏 App、e充电、特来电已登录</label>
+          <label><input type="checkbox" data-check="cable"> 随车充与转接设备检查</label>
+          <label><input type="checkbox" data-check="tire"> 胎压、玻璃水、补胎液</label>
+        </fieldset>
+        <fieldset class="check-group">
+          <legend>3.8 岁小朋友</legend>
+          <label><input type="checkbox" data-check="seat"> 儿童安全座椅固定</label>
+          <label><input type="checkbox" data-check="clothes"> 两套换洗衣物与薄外套</label>
+          <label><input type="checkbox" data-check="snack"> 水、牛奶、饭团/面包、水果</label>
+          <label><input type="checkbox" data-check="wipes"> 湿巾、纸巾、垃圾袋</label>
+          <label><input type="checkbox" data-check="medicine"> 退热、创可贴、防蚊与防晒</label>
+        </fieldset>
+        <fieldset class="check-group urgent">
+          <legend>9 月 25 日复核</legend>
+          <label><input type="checkbox" data-check="xinghua-call"> 杏花村周一开园、餐饮、身高限制</label>
+          <label><input type="checkbox" data-check="hotel-call"> 青州酒店充电位与功率</label>
+          <label><input type="checkbox" data-check="weather"> 三地降雨与高速路况</label>
+          <label><input type="checkbox" data-check="tickets"> 动物园门票与自驾票</label>
+          <label><input type="checkbox" data-check="destination"> 紫金山庄具体园区、楼号、入口</label>
+        </fieldset>
+      </div>
+      <button class="reset-checklist" id="reset-checklist" type="button">清空全部勾选</button>
+    </section>
+
+    <section class="section sources" id="sources">
+      <div class="section-kicker">核对依据</div>
+      <h2>哪些是已确认，哪些要临行复核</h2>
+      <div class="source-columns">
+        <div>
+          <h3>路线与住宿</h3>
+          <ul>
+            <li><a target="_blank" rel="noopener" href="https://hotels.ctrip.com/hotels/114422685.html">乐道酒店地址、早餐与停车信息</a></li>
+            <li><a target="_blank" rel="noopener" href="https://hotels.ctrip.com/hotels/112587922.html">和悦欢宿地址、早餐与充电车位信息</a></li>
+            <li><a target="_blank" rel="noopener" href="https://www.amap.com/">车程、里程与通行费：高德地图 2026-09-17 查询</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>景点与餐饮</h3>
+          <ul>
+            <li><a target="_blank" rel="noopener" href="https://you.ctrip.com/sight/wuyi1446064/5014411.html">衡水野生动物园开放时间、免票政策与电话</a></li>
+            <li><a target="_blank" rel="noopener" href="https://www.qzxinghuacunly.com/">青州杏花村官方介绍与服务热线</a></li>
+            <li><a target="_blank" rel="noopener" href="https://touch.piao.qunar.com/touch/detail.htm?id=504995">杏花村 2026 票型参考</a></li>
+            <li><a target="_blank" rel="noopener" href="https://gs.ctrip.com/html5/you/foods/fooddetail/100057/61573.html">小寒羊营业时间与人均参考</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>充电与天气</h3>
+          <ul>
+            <li><a target="_blank" rel="noopener" href="https://www.icauto.com.cn/cdz/2561.html">邹平服务区充电站资料</a></li>
+            <li><a target="_blank" rel="noopener" href="https://www.icauto.com.cn/cdz/18776.html">潍坊服务区充电站资料</a></li>
+            <li><a target="_blank" rel="noopener" href="https://open-meteo.com/">页面天气数据：Open-Meteo</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="disclaimer">这是一份按公开信息制作的执行型路书，不是景区或道路的实时承诺。营业、票价、路况、充电空闲与天气都可能变化，请以当天官方信息和车机导航为准。</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>一家三口的 2026 秋日路书 · 最后核对：2026-09-17</p>
+    <a href="#top">回到顶部 ↑</a>
+  </footer>
+<script>
+const TRIP_START = new Date("2026-09-26T14:00:00+08:00");
+
+const weatherPoints = [
+  { name: "北京出发", date: "2026-09-26", lat: 39.867, lon: 116.495 },
+  { name: "衡水武邑", date: "2026-09-27", lat: 37.794, lon: 115.867 },
+  { name: "青州杏花村", date: "2026-09-28", lat: 36.645, lon: 118.346 },
+  { name: "烟台牟平", date: "2026-09-28", lat: 37.432, lon: 121.583 }
+];
+
+const weatherCodeText = {
+  0: "晴",
+  1: "大致晴",
+  2: "多云",
+  3: "阴",
+  45: "有雾",
+  48: "雾凇",
+  51: "小毛毛雨",
+  53: "毛毛雨",
+  55: "较强毛毛雨",
+  61: "小雨",
+  63: "中雨",
+  65: "大雨",
+  71: "小雪",
+  73: "中雪",
+  75: "大雪",
+  80: "阵雨",
+  81: "较强阵雨",
+  82: "强阵雨",
+  95: "雷雨",
+  96: "雷雨伴冰雹",
+  99: "强雷雨伴冰雹"
+};
+
+function updateCountdown() {
+  const node = document.querySelector("#countdown");
+  if (!node) return;
+
+  const now = new Date();
+  const diff = TRIP_START.getTime() - now.getTime();
+  if (diff <= 0) {
+    node.textContent = "旅程已经开始，祝一路顺风。";
+    return;
+  }
+
+  const days = Math.floor(diff / 86_400_000);
+  const hours = Math.floor((diff % 86_400_000) / 3_600_000);
+  node.textContent = `距离出发还有 ${days} 天 ${hours} 小时`;
+}
+
+async function fetchWeather(point) {
+  const params = new URLSearchParams({
+    latitude: point.lat,
+    longitude: point.lon,
+    daily: "weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max",
+    timezone: "Asia/Shanghai",
+    forecast_days: "16"
+  });
+  const response = await fetch(`https://api.open-meteo.com/v1/forecast?${params}`);
+  if (!response.ok) throw new Error("weather unavailable");
+  const data = await response.json();
+  const index = data.daily.time.indexOf(point.date);
+  if (index < 0) return { ...point, pending: true };
+  return {
+    ...point,
+    code: data.daily.weather_code[index],
+    high: Math.round(data.daily.temperature_2m_max[index]),
+    low: Math.round(data.daily.temperature_2m_min[index]),
+    rain: data.daily.precipitation_probability_max[index]
+  };
+}
+
+async function renderWeather() {
+  const list = document.querySelector("#weather-list");
+  if (!list) return;
+
+  try {
+    const weather = await Promise.all(weatherPoints.map(fetchWeather));
+    list.innerHTML = weather.map((item) => {
+      if (item.pending) {
+        return `<div class="weather-item"><strong>${item.name}</strong><span>${item.date.slice(5).replace("-", ".")} · 尚未进入预报窗口</span></div>`;
+      }
+      const text = weatherCodeText[item.code] || "天气变化";
+      const rainText = Number.isFinite(item.rain) ? `降雨概率 ${item.rain}%` : "降雨概率待更新";
+      return `<div class="weather-item"><strong>${item.name} · ${text}</strong><span>${item.low}–${item.high}℃ · ${rainText}</span></div>`;
+    }).join("");
+  } catch (error) {
+    list.innerHTML = `<div class="weather-item loading"><span>天气暂时无法加载，请在出发前 48 小时查看手机天气。</span></div>`;
+  }
+}
+
+function setupChecklist() {
+  const boxes = [...document.querySelectorAll("[data-check]")];
+  boxes.forEach((box) => {
+    const key = `roadtrip-check-${box.dataset.check}`;
+    box.checked = localStorage.getItem(key) === "true";
+    box.addEventListener("change", () => localStorage.setItem(key, String(box.checked)));
+  });
+
+  document.querySelector("#reset-checklist")?.addEventListener("click", () => {
+    boxes.forEach((box) => {
+      box.checked = false;
+      localStorage.removeItem(`roadtrip-check-${box.dataset.check}`);
+    });
+  });
+}
+
+function setupSectionObserver() {
+  const links = [...document.querySelectorAll(".day-nav a")];
+  const sections = links.map((link) => document.querySelector(link.getAttribute("href"))).filter(Boolean);
+  if (!("IntersectionObserver" in window)) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (!visible) return;
+    links.forEach((link) => link.classList.toggle("active", link.getAttribute("href") === `#${visible.target.id}`));
+  }, { rootMargin: "-20% 0px -65%", threshold: [0.05, 0.25, 0.5] });
+
+  sections.forEach((section) => observer.observe(section));
+}
+
+document.querySelector("#print-button")?.addEventListener("click", () => window.print());
+
+updateCountdown();
+renderWeather();
+setupChecklist();
+setupSectionObserver();
+
+</script>
+</body>
+</html>
